@@ -1,0 +1,13 @@
+@baseUrl = http://localhost:3333
+
+### Create a short link
+POST {{baseUrl}}/links
+Content-Type: application/json
+
+{
+  "title": "Alazonka",
+  "url": "https://www.youtube.com/@alanzoka"
+}
+
+### Access original url
+GET {{baseUrl}}/USXBKkU

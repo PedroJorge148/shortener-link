@@ -6,6 +6,8 @@ import {
   serializerCompiler,
   validatorCompiler,
 } from 'fastify-type-provider-zod'
+import { accessOriginalUrlRoute } from './routes/access-original-url-route.ts'
+import { createShortLinkRoute } from './routes/create-short-link-route.ts'
 
 const app = fastify()
 
@@ -26,6 +28,9 @@ app.register(fastifySwaggerUi, {
   routePrefix: '/docs',
 })
 
+app.register(createShortLinkRoute)
+app.register(accessOriginalUrlRoute)
+
 app.listen({ port: 3333 }).then(() => {
-  console.log('HTTP server running!')
+  console.log('HTTP server running! Docs on http://localhost:3333/docs')
 })
