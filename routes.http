@@ -11,3 +11,7 @@ Content-Type: application/json
 
 ### Access original url
 GET {{baseUrl}}/USXBKkU
+
+### Get all links
+
+GET {{baseUrl}}/links
